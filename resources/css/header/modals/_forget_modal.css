@@ -1,0 +1,613 @@
+.overflow-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.currency_icon {
+    min-width: 18px;
+    padding: 0 3px;
+    border-radius: 11px;
+    display: inline-flex;
+    justify-content: center;
+    color: #fcfcfc;
+    font-size: 13px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fcfcfc;
+    background-clip: text;
+    text-fill-color: #fcfcfc;
+    font-weight: 300 !important;
+    height: 18px;
+    align-items: center;
+}
+.coded_currency_icon {
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    color: #B0B9D0;
+    line-height: normal;
+}
+.custom_flash_message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 9px;
+    background: #fcfcfc;
+    color: #5A6482;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    width: auto;
+    min-height: 60px;
+    position: fixed;
+    top: -100px;
+    right: 10px;
+    z-index: 9999;
+    box-shadow: 0px 2px 13px 0px rgba(149, 159, 166, 0.24);
+    -webkit-box-shadow: 0px 2px 13px 0px rgba(149, 159, 166, 0.24);
+    -moz-box-shadow: 0px 2px 13px 0px rgba(149, 159, 166, 0.24);
+    -ms-box-shadow: 0px 2px 13px 0px rgba(149, 159, 166, 0.24);
+    -o-box-shadow: 0px 2px 13px 0px rgba(149, 159, 166, 0.24);
+}
+.custom_flash_message .custom_flash_message_icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+.custom_flash_message .custom_flash_message_icon .message_error_icon {
+    display: none;
+}
+.custom_flash_message .custom_flash_message_icon .message_success_icon {
+    display: none;
+}
+.custom_flash_message .custom_flash_message_icon .message_warning_icon {
+    display: none;
+}
+.custom_flash_message .custom_flash_message_text {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 20px;
+    font-style: normal;
+    letter-spacing: normal;
+    display: inline-flex;
+    width: 100%;
+    max-width: 320px;
+}
+.custom_flash_message .custom_flash_message_close {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 20px;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #E5E9F4;
+    cursor: pointer;
+    display: inline-block;
+    height: auto;
+    padding: 10px;
+}
+.message_error {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #FD5B6E;
+    top: 60px !important;
+}
+.message_error .custom_flash_message_icon .message_error_icon {
+    display: inline-flex !important;
+}
+.message_error .custom_flash_message_icon .message_success_icon {
+    display: none !important;
+}
+.message_error .custom_flash_message_icon .message_warning_icon {
+    display: none !important;
+}
+.message_success {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #4DCD8F;
+    top: 60px !important;
+}
+.message_success .custom_flash_message_icon .message_success_icon {
+    display: inline-flex !important;
+}
+.message_success .custom_flash_message_icon .message_error_icon {
+    display: none !important;
+}
+.message_success .custom_flash_message_icon .message_warning_icon {
+    display: none !important;
+}
+.message_warning {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #F9CC44;
+    top: 60px !important;
+}
+.message_warning .custom_flash_message_icon .message_success_icon {
+    display: none !important;
+}
+.message_warning .custom_flash_message_icon .message_error_icon {
+    display: none !important;
+}
+.message_warning .custom_flash_message_icon .message_warning_icon {
+    display: inline-flex !important;
+}
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-variant-numeric: tabular-nums;
+    scroll-behavior: smooth;
+}
+.font_italic {
+    font-style: italic !important;
+    padding-right: 10px;
+}
+.tooltip {
+    max-width: 260px;
+    background-color: transparent !important;
+    border-color: transparent;
+    z-index: 9999;
+}
+.tooltip .tooltip-inner {
+    background-color: #555F87;
+    opacity: 1 !important;
+    color: #E5E9F4;
+    padding: 16px;
+    z-index: 9999;
+}
+.tooltip .tooltip-arrow {
+    scale: 2 !important;
+    border-top-color: #555F87 !important;
+    z-index: 9999;
+}
+.tooltip.right .tooltip-arrow {
+    border-right-color: #555F87 !important;
+    border-bottom-color: transparent !important;
+    border-top-color: transparent !important;
+    background-color: transparent;
+}
+.tooltip.bottom .tooltip-arrow {
+    border-right-color: transparent !important;
+    border-bottom-color: #555F87 !important;
+    border-top-color: transparent !important;
+    background-color: transparent;
+}
+.tooltip.left .tooltip-arrow {
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-top-color: transparent !important;
+    border-left-color: #555F87 !important;
+    background-color: transparent;
+}
+.tooltip.top .tooltip-arrow {
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-top-color: #555F87 !important;
+    border-left-color: transparent !important;
+    background-color: transparent;
+}
+._forget_modal_overlay {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(57, 61, 83, 0.8);
+    z-index: 1031;
+    overscroll-behavior: none;
+    color: #333333;
+}
+._forget_modal_overlay ._forget_modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 833px;
+    max-height: 747px;
+    background: #393D53;
+    border-radius: 20px;
+    margin: 20px;
+    gap: 22px;
+    overscroll-behavior: none;
+}
+._forget_modal_overlay ._forget_modal #_forget_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overscroll-behavior: none;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 656px;
+    max-width: 833px;
+    border-radius: 20px;
+    background: #fcfcfc;
+    padding: 20px;
+    gap: 15px;
+    position: relative;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_close_modal {
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 20px;
+    text-align: end;
+    color: #b0b9d0;
+    position: absolute;
+    top: 20px;
+    padding: 15px;
+    right: 20px;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_header_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_header_div ._forget_header {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    width: 100%;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    max-width: 465px;
+    text-align: center;
+    width: 100%;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+    margin-top: 115px;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    margin-bottom: 10px;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 10px;
+    background: #F8F9FD;
+    padding: 1px;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input ._forget_input_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 9px;
+    background: #F8F9FD !important;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input ._forget_input_wrapper ._forget_email_field {
+    width: 100%;
+    max-width: 320px;
+    padding: 0 20px;
+    height: 50px;
+    border: none;
+    border-radius: 9px;
+    background: inherit;
+    box-shadow: none;
+    color: #68798A;
+    font-weight: 500;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input ._forget_input_wrapper ._forget_email_field:focus {
+    outline: none;
+    box-shadow: none;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input ._forget_input_wrapper input:-webkit-autofill,
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input ._forget_input_wrapper input:-webkit-autofill:hover,
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input ._forget_input_wrapper input:-webkit-autofill:focus,
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input ._forget_input_wrapper input:-webkit-autofill:active {
+    transition: background-color 9999s ease-in-out 0s;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_field_focus {
+    background: linear-gradient(133deg, #00F0FF 0%, #1DA5F1 100%) !important;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields .field-passwordresetrequestform-email ._forget_input_error {
+    background: #F28686 !important;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_email_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 290px;
+    height: 70px;
+    background: #C8CFE3;
+    gap: 20px;
+    border-radius: 9px;
+    border: none;
+    cursor: not-allowed;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_email_button ._forget_show_spinner_element {
+    display: flex !important;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_email_button ._forget_submit_default {
+    display: none;
+}
+@keyframes spinner {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_email_button ._forget_spin_button {
+    display: none;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_email_button ._forget_spin_button::before {
+    animation: 1.5s linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 3px #cfd0d1;
+    border-bottom-color: #1c87c9;
+    border-radius: 50%;
+    content: "";
+    height: 24px;
+    width: 24px;
+    display: block;
+    transform: translate3d(-50%, -50%, 0);
+    will-change: transform;
+    position: relative;
+    top: 12px;
+    left: 10px;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_email_button ._forget_email_text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #fcfcfc;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_active_submit {
+    background: linear-gradient(0deg, rgba(36, 41, 90, 0.17) 0%, rgba(36, 41, 90, 0.17) 100%), linear-gradient(119deg, #00E0FF 23.44%, #1DA5F1 100%);
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_active_submit:hover {
+    cursor: pointer;
+    background: linear-gradient(92.37deg, #00E0FF 24.11%, #1DA5F1 101.7%);
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_back_btn {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    width: 100%;
+    color: #6A7CA4;
+    text-align: center;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields ._forget_back_btn:hover {
+    cursor: pointer;
+    color: #1DA5F1;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 91px;
+    gap: 19px;
+    color: #fcfcfc;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: normal;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: fit-content;
+    max-height: 52px;
+    padding: 20px 19px;
+    gap: 10px;
+    border-radius: 9px;
+    border: 1px solid #C8CFE3;
+    background: transparent;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button ._register_login_text {
+    font-weight: 600;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button:hover {
+    cursor: pointer;
+    background: #FFF;
+    color: #393d53;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button:hover path {
+    fill: #393d53;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button:active {
+    background: #F5F5F5;
+    color: #393d53;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button:active path {
+    fill: #393d53;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button:disabled {
+    cursor: not-allowed;
+    border: 1px solid #6B6E76;
+    background: transparent;
+    color: #6b6e76;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button:disabled path {
+    fill: #6b6e76;
+}
+._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section ._forget_register_button:focus {
+    border: 1px dashed #C8CFE3;
+}
+@media (max-width: 830px) {
+    ._forget_modal_overlay ._forget_modal {
+        max-width: none !important;
+        max-height: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form {
+        justify-content: flex-start !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section {
+        border-radius: 0 !important;
+        justify-content: space-between !important;
+        max-height: none !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section {
+        max-height: none !important;
+        padding: 15px;
+        height: auto !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_fields {
+        margin-top: 0 !important;
+        height: 50%;
+        justify-content: space-between;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options {
+        flex-direction: column-reverse !important;
+        height: auto !important;
+        margin-top: 0 !important;
+        gap: 30px;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_linked {
+        padding: 0 20px !important;
+        gap: 15px !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_linked ._forget_social_buttons ._forget_social_facebook,
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_linked ._forget_social_buttons ._forget_social_google {
+        justify-content: center !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_traditional {
+        box-shadow: none !important;
+        padding: 0 20px !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_traditional ._forget_fields .form-group ._forget_input,
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_traditional ._forget_fields .form-group ._forget_input ._forget_input_wrapper,
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_traditional ._forget_fields .form-group ._forget_input ._forget_input_wrapper ._forget_email_field,
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_traditional ._forget_fields .form-group ._forget_input ._forget_input_wrapper ._forget_password_field {
+        max-width: none !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_submit_button {
+        margin-top: 0 !important;
+    }
+}
+@media (max-width: 490px) {
+    ._forget_modal_overlay {
+        top: 0;
+        z-index: 9999;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+    ._forget_modal_overlay::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+    }
+    ._forget_modal_overlay ._forget_modal {
+        height: 100% !important;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+    ._forget_modal_overlay ._forget_modal::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_bottom_section {
+        padding: 15px 0 !important;
+    }
+}
+@media (max-width: 360px) {
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_traditional ._forget_fields ._forget_additional {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    ._forget_modal_overlay ._forget_modal #_forget_form ._forget_top_section ._forget_options ._forget_traditional ._forget_fields ._forget_additional ._forget_forgot_password {
+        width: 100%;
+        text-align: center;
+    }
+}
+._forget_error {
+    display: block;
+    margin: 5px 0 10px 0;
+    min-height: 15px;
+    height: 15px;
+    max-height: 15px;
+    color: #a94442;
+}
