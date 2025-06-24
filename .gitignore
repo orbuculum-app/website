@@ -55,3 +55,9 @@ test.php
 .vscode/
 
 config/config.php
+
+workspace.code-workspace
+package.json
+package-lock.json
+gulpfile.js
+src
