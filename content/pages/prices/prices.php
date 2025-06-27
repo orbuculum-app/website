@@ -3,7 +3,7 @@ $plansListInfoIcon = include __DIR__ . '/icons/_plans_list_info_icon.php';
 
 return [
     'include.title' => 'Choose a plan that works for you',
-    'include.subtitle' => 'All Pricing Plans',
+    'include.subtitle' => 'All Pricing Plans Include',
     'include.items' => [
         [
             'icon' => include __DIR__ . '/icons/prices_unlimited_users.php',
@@ -255,7 +255,7 @@ With any plan, you can easily upgrade its capabilities as your business grows:</
   <p>Choose the plan that meets your current needs and expand it only when it\'s genuinely necessary and cost-effective.</p>',
     'server.image_path' => '/images/prices/server_img_3.png',
     'server.title' => 'Additional option - dedicated server',
-    'server.text' => 'From $ 150 to $ 500+, depending on configuration (memory volume, processor, storage). Available as an addition to any paid tariff plan. Suitable for those who work with large volumes of data or complex analytics, as well as for clients with specific security and compliance requirements. Our specialists will help you choose the optimal server configuration for your tasks.
+    'server.text' => 'From $ 150 to $ 500+, depending on configuration (memory volume, processor, storage). Available as an addition to any paid price plan. Suitable for those who work with large volumes of data or complex analytics, as well as for clients with specific security and compliance requirements. Our specialists will help you choose the optimal server configuration for your tasks.
 ',
 
     // FAQ section
