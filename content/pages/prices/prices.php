@@ -3,7 +3,7 @@ $plansListInfoIcon = include __DIR__ . '/icons/_plans_list_info_icon.php';
 
 return [
     'include.title' => 'Choose a plan that works for you',
-    'include.subtitle' => 'All Tariff Plans Include',
+    'include.subtitle' => 'All Pricing Plans Include',
     'include.items' => [
         [
             'icon' => include __DIR__ . '/icons/prices_unlimited_users.php',
@@ -55,7 +55,7 @@ return [
     'plans.field_labels' => [
         '__row_1' => '',
         '__row_2' => "Accounts + projects <span class='cursor-pointer roboto tooltip' data-tooltip='Additional Accounts/Projects:
- $ 49 per 100 unit/mo.'><br><span class='tooltip-text roboto'>with expansion capability</span>$plansListInfoIcon</span>",
+ $ 49 per 100 unit/mo.'><br><span class='tooltip-text roboto'>with pay-as-you-grow expansion options</span>$plansListInfoIcon</span>",
         '__row_3' => 'Transactions',
         '__row_4' => "<span class='cursor-pointer roboto tooltip' data-tooltip='Based on the principle of a bank statement, the balance changes through a list of sequential entries, not by editing old figures.
 
@@ -66,8 +66,8 @@ All details and examples are in the help section below.
         '__row_5' => 'Cost of additional 1000 transactions',
         '__row_6' => 'Personal manager',
         '__row_7' => "Supported custom integrations <span class='cursor-pointer roboto tooltip' data-tooltip='Additional Managed Integration:
-$45 per unit.'><br><span class='tooltip-text roboto'>with expansion capability</span>$plansListInfoIcon</span>",
-        '__row_8' => "<span class='roboto f-600'>Custom development</span>.<br>Creation/updating of integrations and reports (per quarter, <span class='cursor-pointer roboto tooltip' data-tooltip='Integration or Custom Report Creation/Update: $200 per unit.'><span class='tooltip-text roboto'>with expansion capability</span>$plansListInfoIcon</span>)",
+$45 per unit.'><br><span class='tooltip-text roboto'>with pay-as-you-grow expansion options</span>$plansListInfoIcon</span>",
+        '__row_8' => "<span class='roboto f-600'>Custom development</span>.<br>Creation/updating of integrations and reports (per quarter, <span class='cursor-pointer roboto tooltip' data-tooltip='Integration or Custom Report Creation/Update: $200 per unit.'><span class='tooltip-text roboto'>with pay-as-you-grow expansion options</span>$plansListInfoIcon</span>)",
         '__row_9' => 'Who it\'s for',
     ],
 
@@ -75,7 +75,7 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with expansion capability</
         [
             'class' => '_starter',
             'name' => 'Starter',
-            'desc' => 'Essential<br>Financial Control',
+            'desc' => 'Essential<br>Financial Tools for Beginners',
             'price' => [
                 'monthly' => [
                     'value' => '$ 0',
@@ -116,7 +116,7 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with expansion capability</
         [
             'class' => '_business',
             'name' => 'Business',
-            'desc' => 'Full Control<br>Over Your Finances',
+            'desc' => 'Full Money Management<br>at Scale',
             'price' => [
                 'monthly' => [
                     'value' => '$ 49',
@@ -157,7 +157,7 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with expansion capability</
         [
             'class' => '_growth',
             'name' => 'Growth',
-            'desc' => 'Custom-Built<br>Integrations & Analytics',
+            'desc' => 'Custom-Built Solutions<br>for Integrations and Analytics',
             'price' => [
                 'monthly' => [
                     'value' => '$ 149',
@@ -193,12 +193,12 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with expansion capability</
                 'value' => 'Up to 3',
                 'desc' => ''
             ],
-            'for_who' => 'Scaling businesses requiring assistance with customization and integrations'
+            'for_who' => 'Scaling businesses requiring advanced or custom integrations with CRMs, external reporting, etc.'
         ],
         [
             'class' => '_ultimate',
             'name' => 'Ultimate',
-            'desc' => 'Comprehensive Solution for High Volumes',
+            'desc' => 'Comprehensive Solutions<br>for High-volume Organizations',
             'display_settings' => [
                 'price_gap' => [
                     'monthly' => 'gap-7',
@@ -240,13 +240,13 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with expansion capability</
                 'value' => 'Up to 6',
                 'desc' => ''
             ],
-            'for_who' => 'Organizations with large data volumes or complex finances requiring maximum customization'
+            'for_who' => 'Larger enterprises handling high-volume financial data that require elite-level, personalized customization'
         ],
     ],
     'extra_info.image_path' => '/images/prices/prices_extra_info_2.png',
     'extra_info.title' => 'Flexible Expansion Options',
-    'extra_info.text' => '<p>Running out of standard limits? 
-In any plan, you can easily enhance the service\'s capabilities as your business grows:</p>
+    'extra_info.text' => '<p>Reaching the limits of your plan? 
+With any plan, you can easily upgrade its capabilities as your business grows:</p>
   <ul class="fx-column gap-7" style="list-style: none;"> 
     <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; line-height: 11px;">•</span><div><b>Additional Accounts / Projects:</b> $49 per 100 units.</div></li>
     <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; line-height: 11px;">•</span><div><b>Additional Managed Integration:</b> $45 per unit.</div></li>
@@ -255,7 +255,7 @@ In any plan, you can easily enhance the service\'s capabilities as your business
   <p>Choose the plan that meets your current needs and expand it only when it\'s genuinely necessary and cost-effective.</p>',
     'server.image_path' => '/images/prices/server_img_3.png',
     'server.title' => 'Additional option - dedicated server',
-    'server.text' => 'From $ 150 to $ 500+, depending on configuration (memory volume, processor, storage). Available as an addition to any paid tariff plan. Suitable for those who work with large volumes of data or complex analytics, as well as for clients with special security and compliance requirements. Our specialists will help you choose the optimal server configuration for your tasks.
+    'server.text' => 'From $ 150 to $ 500+, depending on configuration (memory volume, processor, storage). Available as an addition to any paid price plan. Suitable for those who work with large volumes of data or complex analytics, as well as for clients with specific security and compliance requirements. Our specialists will help you choose the optimal server configuration for your tasks.
 ',
 
     // FAQ section
@@ -273,10 +273,10 @@ In any plan, you can easily enhance the service\'s capabilities as your business
         [
             'question' => 'Accounts + Projects',
             'answer' => '<ul class="fx-column gap-7" style="list-style: none;">
-                <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Accounts</b> are any entities involved in transactions: financial accounts, accounts for tracking debts with each counterparty or employee, and income/expense items (e.g., "Office Rent," "Salaries," "Sales Revenue," "Advertising Expenses"). Accounts are placed within categories, which you can create without limitations.</div></li>
+                <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Accounts</b> are any entities involved in transactions: financial accounts, accounts for tracking debts with each contact or employee, and income/expense items (e.g., "Office Rent," "Salaries," "Sales Revenue," "Advertising Expenses"). Accounts are placed within categories, which you can create without limitations.</div></li>
                 <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Projects</b> are tags for grouping transactions to analyze P&L and other analytics.</div></li>
             </ul>
-            <p><b>Example:</b> 5 financial accounts + 3 counterparties (3 accounts) + 15 income/expense items + 2 projects = 25 units for the limit.</p>'
+            <p><b>Example:</b> 5 financial accounts + 3 contacts (3 accounts) + 15 income/expense items + 2 projects = 25 units for the limit.</p>'
         ],
         [
             'question' => 'Creating/Updating Integrations or Custom Reports',

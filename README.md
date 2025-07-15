@@ -32,6 +32,10 @@ cp config/config.sample.php config/config.php
 2. Modify the configuration files as needed:
    - Update `config/config.php` with your local settings
    - **IMPORTANT**: For development, set `'no_cache_static' => true` in your `config/config.php`
+   - Set proper permissions for the build directory:
+     ```bash
+     chmod 777 public/build/
+     ```
 
 ### 3. Start the Docker Containers
 
