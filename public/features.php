@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-/* @var $headerContent array */
-/* @var $siteContent array */
 
 $features = include '../content/pages/features/features.php';
-
-// $fieldLabels = $prices['plans.field_labels'];
-
-$mobileLabelClass = 'mobile-label f-500 f-s-14 roboto';
-$rowValueClass = 'row-value roboto f-700 f-s-14';
-$rowDescClass = 'row-desc roboto f-400 txt-site-gray f-s-13';
-$headerColumnRowsClass = 'roboto f-500 f-s-14';
-$rowTitleClass = 'row-title fx-row fx-center'
 ?>
 
 <head>
