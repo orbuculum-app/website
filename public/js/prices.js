@@ -73,7 +73,6 @@ function cacheElements() {
     // FAQ elements
     DOM.faqItems = document.querySelectorAll('.faq-item');
     DOM.faqQuestions = document.querySelectorAll('.faq-question');
-    alert(DOM.faqQuestions.length)
 }
 
 function setupEventListeners() {

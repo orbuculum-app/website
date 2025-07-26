@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const contentContainer = document.querySelector('.js-feature-container');
 	const allowedPages = window.allowedPages || [];
-	let currentPage = window.currentPage || allowedPages[0] || '';
+	let currentSubPage = window.currentSubPage || allowedPages[0] || '';
 	let isLoading = false;
 
 	const createArticle = (html, pageName, prepend = false) => {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const updatePrevNextButtons = () => {
 		if (!allowedPages.length) return;
-		const currentIndex = allowedPages.indexOf(currentPage);
+		const currentIndex = allowedPages.indexOf(currentSubPage);
 		document.querySelectorAll('.js-feature-prev').forEach(button => {
 			button.classList.toggle('disabled', currentIndex === 0);
 			button.dataset.page = currentIndex > 0 ? allowedPages[currentIndex - 1] : '';
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const loadObserver = new IntersectionObserver((entries) => {
 		if (entries[0].isIntersecting && !isLoading && allowedPages.length) {
-			const currentIndex = allowedPages.indexOf(currentPage);
+			const currentIndex = allowedPages.indexOf(currentSubPage);
 			if (currentIndex < allowedPages.length - 1) {
 				loadPage(allowedPages[currentIndex + 1], false, false);
 			}
@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (mostVisibleEntry && maxViewportRatio > 0.5) {
 			const pageName = mostVisibleEntry.target.id;
-			if (pageName !== currentPage && allowedPages.includes(pageName)) {
-				currentPage = pageName;
+			if (pageName !== currentSubPage && allowedPages.includes(pageName)) {
+				currentSubPage = pageName;
 				history.pushState({ page: pageName }, '', `feature.php?page=${pageName}`);
 				updateNavigation(pageName);
 				updatePrevNextButtons();
@@ -141,13 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		const targetPage = e.target.dataset.page;
 		if (!allowedPages.includes(targetPage) || e.target.classList.contains('disabled')) return;
 
-		const currentIndex = allowedPages.indexOf(currentPage);
+		const currentIndex = allowedPages.indexOf(currentSubPage);
 		const targetIndex = allowedPages.indexOf(targetPage);
 		const existingArticle = document.getElementById(targetPage);
 
 		if (existingArticle) {
 			existingArticle.scrollIntoView({ behavior: 'smooth' });
-			currentPage = targetPage;
+			currentSubPage = targetPage;
 		} else if (targetIndex < currentIndex) {
 			for (let i = currentIndex - 1; i >= targetIndex; i--) {
 				await loadPage(allowedPages[i], i === targetIndex, true);
@@ -175,9 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	window.addEventListener('popstate', (e) => {
 		if (e.state?.page && allowedPages.includes(e.state.page)) {
-			currentPage = e.state.page;
-			updateNavigation(currentPage);
-			const article = document.getElementById(currentPage);
+			currentSubPage = e.state.page;
+			updateNavigation(currentSubPage);
+			const article = document.getElementById(currentSubPage);
 			if (article) article.scrollIntoView({ behavior: 'smooth' });
 			updatePrevNextButtons();
 		}
