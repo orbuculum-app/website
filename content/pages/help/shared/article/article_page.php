@@ -40,10 +40,11 @@ $noStepsClass = empty($steps) ? 'article-page--no-steps' : '';
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const navLinks = Array.from(document.querySelectorAll(".article-page__step-content"));
-        const wrapper = document.getElementsByClassName("article-page__content-wrapper")[0];
 
         function updateActiveLinks() {
-            const viewportBottom = wrapper.clientHeight;
+            const viewportBottom = window.innerHeight; // correct property for viewport height
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop; // scroll position
+            const scrollHeight = document.documentElement.scrollHeight;
 
             navLinks.forEach((link, index) => {
                 const href = link.getAttribute("href");
@@ -56,8 +57,7 @@ $noStepsClass = empty($steps) ? 'article-page--no-steps' : '';
                 const hasScrolledPastOrReached = sectionRect.top < viewportBottom;
 
                 const isLast = index === navLinks.length - 1;
-                const nearBottom =
-                    wrapper.scrollTop + wrapper.clientHeight >= wrapper.scrollHeight - 5;
+                const nearBottom = scrollTop + window.innerHeight >= scrollHeight - 5;
 
                 const stepItem = link.closest(".article-page__step");
                 if (!stepItem) return;
@@ -77,15 +77,15 @@ $noStepsClass = empty($steps) ? 'article-page--no-steps' : '';
                 if (!targetEl) return;
 
                 e.preventDefault();
-                wrapper.scrollTo({
+                window.scrollTo({
                     top: targetEl.offsetTop - 20,
                     behavior: "smooth"
                 });
             });
         });
 
-        wrapper.addEventListener("scroll", updateActiveLinks);
-        wrapper.addEventListener("resize", updateActiveLinks);
+        window.addEventListener("scroll", updateActiveLinks);
+        window.addEventListener("resize", updateActiveLinks);
         updateActiveLinks();
     });
 </script>
