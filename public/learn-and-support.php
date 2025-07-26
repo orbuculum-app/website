@@ -61,7 +61,6 @@ $breadcrumbs = [
     <?php include '../partials/header/header.php' ?>
 
     <main class="features__container feature__container fx-column">
-
         <div class="content">
             <div class="js-feature-header fx-row box fx-wrap f-s-12 feature-header">
                 <nav class="relative breadcrumbs" aria-label="Breadcrumb">
