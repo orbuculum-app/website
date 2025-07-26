@@ -5,28 +5,46 @@ document.addEventListener('DOMContentLoaded', () => {
 	let currentPage = window.currentPage || allowedPages[0] || '';
 	let isLoading = false;
 
-	const animatedScrollTo = (element, offset = 40, duration = 700) => {
+	const animatedScrollTo = (element, options = {}) => {
 		if (!element) return;
-		const elementPosition = element.getBoundingClientRect().top;
-		const startPosition = window.pageYOffset;
-		const targetPosition = elementPosition + startPosition - offset;
-		let startTime = null;
-		const easeInOutQuad = (t, b, c, d) => {
-			t /= d / 2;
-			if (t < 1) return c / 2 * t * t + b;
-			t--;
-			return -c / 2 * (t * (t - 2) - 1) + b;
-		};
-		const animation = (currentTime) => {
-			if (startTime === null) startTime = currentTime;
-			const timeElapsed = currentTime - startTime;
-			const run = easeInOutQuad(timeElapsed, startPosition, targetPosition - startPosition, duration);
-			window.scrollTo(0, run);
-			if (timeElapsed < duration) {
+
+		setTimeout(() => {
+			const { offsetUp = 160, offsetDown = 20, duration = 700 } = options;
+
+			const elementRect = element.getBoundingClientRect();
+			const startPosition = window.pageYOffset;
+
+			const isScrollingUp = elementRect.top + startPosition < startPosition;
+			const offset = isScrollingUp ? offsetUp : offsetDown;
+
+			const targetPosition = elementRect.top + startPosition - offset;
+
+			if (Math.abs(startPosition - targetPosition) < 1) return;
+
+			let startTime = null;
+			const easeInOutQuad = (t, b, c, d) => {
+				t /= d / 2;
+				if (t < 1) return c / 2 * t * t + b;
+				t--;
+				return -c / 2 * (t * (t - 2) - 1) + b;
+			};
+
+			const animation = (currentTime) => {
+				if (startTime === null) startTime = currentTime;
+				const timeElapsed = currentTime - startTime;
+
+				if (timeElapsed >= duration) {
+					window.scrollTo(0, targetPosition);
+					return;
+				}
+
+				const run = easeInOutQuad(timeElapsed, startPosition, targetPosition - startPosition, duration);
+				window.scrollTo(0, run);
+
 				requestAnimationFrame(animation);
-			}
-		};
-		requestAnimationFrame(animation);
+			};
+			requestAnimationFrame(animation);
+		}, 0);
 	};
 
 	const createArticle = (html, pageName, prepend = false) => {
@@ -51,37 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			const article = createArticle(data.html, data.pageName, prepend);
 
-			// let imagePromises = [];
-			// if (scroll) {
-			// 	const images = article.querySelectorAll('img');
-			// 	imagePromises = Array.from(images).map(img => new Promise(resolve => {
-			// 		if (img.complete) {
-			// 			resolve();
-			// 		} else {
-			// 			img.addEventListener('load', resolve, { once: true });
-			// 			img.addEventListener('error', resolve, { once: true });
-			// 		}
-			// 	}));
-			// }
-
 			if (scroll) {
-				// const images = article.querySelectorAll('img');
-				// const promises = Array.from(images).map(img => new Promise(resolve => {
-				// 	if (img.complete) resolve();
-				// 	else {
-				// 		img.addEventListener('load', resolve, { once: true });
-				// 		img.addEventListener('error', resolve, { once: true });
-				// 	}
-				// }));
-				// await Promise.all(promises);
 				animatedScrollTo(article);
 			}
 
 			if (!prepend) observeLastArticle();
 			observeVisibleArticles();
-			initNavigationEvents();
+			// initNavigationEvents();
 			return article;
-			// return { article, imagePromises };
 		} catch (error) {
 			console.error('Error loading page:', error);
 			alert(error.message === '404' ? 'Page not found.' : 'An error occurred.');
@@ -128,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}, { rootMargin: '0px', threshold: Array.from({ length: 101 }, (_, i) => i / 100) });
 
 	const observeVisibleArticles = () => {
-		const articles = contentContainer.querySelectorAll('article');
+		const articles = contentContainer.querySelectorAll('article.feature-article');
 		visibilityObserver.disconnect();
 		articles.forEach(article => visibilityObserver.observe(article));
 	};
@@ -139,8 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (updateHistory) {
 			history.pushState({ page: pageName }, '', `feature.php?page=${pageName}`);
 		}
-		// updateNavigation(pageName);
-		// updatePrevNextButtons();
+		updateNavigation(pageName);
+		updatePrevNextButtons();
 	};
 
 	const handleNavigation = async (e) => {
@@ -156,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (existingArticle) {
 			animatedScrollTo(existingArticle);
-			// setCurrentPage(targetPage);
 		} else {
 			const allImagePromises = [];
 			let targetArticleElement = null;
@@ -166,32 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (targetIndex < currentIndex) {
 				for (let i = currentIndex - 1; i >= targetIndex; i--) {
 					await loadPage(allowedPages[i], i === targetIndex, true);
-					// const result = await loadPage(allowedPages[i], true, true);
-					// if (result) {
-					// 	allImagePromises.push(...result.imagePromises);
-					// 	if (i === targetIndex) {
-					// 		targetArticleElement = result.article;
-					// 	}
-					// }
 				}
 			} else {
 				for (let i = currentIndex + 1; i <= targetIndex; i++) {
 					await loadPage(allowedPages[i], i === targetIndex, false);
-					// const result = await loadPage(allowedPages[i], true, false);
-					// if (result) {
-					// 	allImagePromises.push(...result.imagePromises);
-					// 	if (i === targetIndex) {
-					// 		targetArticleElement = result.article;
-					// 	}
-					// }
 				}
 			}
-			// await Promise.all(allImagePromises);
-			// if (targetArticleElement) {
-			// 	animatedScrollTo(targetArticleElement);
-			// }
-
-			// setCurrentPage(targetPage);
 		}
 	};
 
@@ -202,10 +176,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	};
 
+	const updateNavigation = (activePage) => {
+		document.querySelectorAll('.js-feature-nav').forEach(link => {
+			link.classList.toggle('active', link.dataset.page === activePage);
+		});
+	};
+
+	const updatePrevNextButtons = () => {
+		if (!allowedPages.length) return;
+		const currentIndex = allowedPages.indexOf(currentPage);
+		document.querySelectorAll('.js-feature-prev').forEach(button => {
+			button.classList.toggle('disabled', currentIndex === 0);
+			button.dataset.page = currentIndex > 0 ? allowedPages[currentIndex - 1] : '';
+		});
+		document.querySelectorAll('.js-feature-next').forEach(button => {
+			button.classList.toggle('disabled', currentIndex === allowedPages.length - 1);
+			button.dataset.page = currentIndex < allowedPages.length - 1 ? allowedPages[currentIndex + 1] : '';
+		});
+	};
+
 	if (allowedPages.length) {
 		observeLastArticle();
 		observeVisibleArticles();
-		// updatePrevNextButtons();
+		updatePrevNextButtons();
 		initNavigationEvents();
 	}
 
@@ -247,26 +240,5 @@ document.addEventListener('DOMContentLoaded', () => {
 			el.classList.remove('active');
 		});
 	});
-
-	return;
-
-	const updateNavigation = (activePage) => {
-		document.querySelectorAll('.js-feature-nav').forEach(link => {
-			link.classList.toggle('active', link.dataset.page === activePage);
-		});
-	};
-
-	const updatePrevNextButtons = () => {
-		if (!allowedPages.length) return;
-		const currentIndex = allowedPages.indexOf(currentPage);
-		document.querySelectorAll('.js-feature-prev').forEach(button => {
-			button.classList.toggle('disabled', currentIndex === 0);
-			button.dataset.page = currentIndex > 0 ? allowedPages[currentIndex - 1] : '';
-		});
-		document.querySelectorAll('.js-feature-next').forEach(button => {
-			button.classList.toggle('disabled', currentIndex === allowedPages.length - 1);
-			button.dataset.page = currentIndex < allowedPages.length - 1 ? allowedPages[currentIndex + 1] : '';
-		});
-	};
 
 });
