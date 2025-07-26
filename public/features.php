@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-
 $features = include '../content/pages/features/features.php';
 ?>
 

@@ -36,6 +36,8 @@
     background-color: var(--color-white);
     align-items: center;
     justify-content: start;
+    color: black;
+
 }
 
 .submenu-ls__item svg {

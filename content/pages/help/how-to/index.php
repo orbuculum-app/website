@@ -1,0 +1,26 @@
+<?php
+if (isset($_GET['article']) && !empty($_GET['article'])) {
+    $article_id = basename($_GET['article']);
+
+    $file_path = __DIR__ . '/articles/' . $article_id . '.php';
+
+    if (file_exists($file_path)) {
+        ob_start();
+        require $file_path;
+        $page_content = ob_get_clean();
+        echo $page_content;
+    }
+} else {
+    $file_path = __DIR__ . '/all-how-tos.php';
+    include($file_path);
+}
+?>
+
+<?php
+$links = [
+        ['label' => 'Visit FAQ', 'url' => ''],
+        ['label' => 'See Real Use Cases', 'url' => ''],
+        ['label' => 'Watch How To`s', 'url' => ''],
+];
+include '../content/pages/help/shared/_help_footer.php';
+?>
