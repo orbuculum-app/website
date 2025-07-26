@@ -91,7 +91,7 @@ include __DIR__ . '/../shared/_help_intro.php';
             $duration = $tutorial['duration'];
             $image = $tutorial['image'];
             $tag = $tutorial['tag'];
-            include __DIR__ . '/tutorial_article.php';
+            include __DIR__ . '/tutorial_item.php';
             ?>
         <?php endforeach; ?>
     </div>
