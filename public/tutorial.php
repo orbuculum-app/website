@@ -4,7 +4,7 @@
 <head>
     <?php include '../partials/head.php' ?>
     <script type="module" src="js/faq.js?v=<?php echo $staticVersion; ?>" defer></script>
-    <script type="module" src="js/help/script.js?v=<?php echo $staticVersion; ?>" defer></script>
+    <script type="module" src="js/learn-and-support/script.js?v=<?php echo $staticVersion; ?>" defer></script>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <main class="features__container">
         <div class="content">
             <?php
-            $file_path = __DIR__ . '/../content/pages/help/shared/article_page.php';
+            $file_path = __DIR__ . '/../content/pages/learn-and-support/shared/article_page.php';
             include($file_path);
             ?>
         </div>

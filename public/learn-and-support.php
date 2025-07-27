@@ -20,8 +20,8 @@ function load_page_content($path)
 }
 
 $page_content = $isMainPage
-    ? load_page_content(__DIR__ . '/../content/pages/help/main/index.php')
-    : load_page_content(__DIR__ . "/../content/pages/help/{$page_name}/index.php");
+    ? load_page_content(__DIR__ . '/../content/pages/learn-and-support/main/index.php')
+    : load_page_content(__DIR__ . "/../content/pages/learn-and-support/{$page_name}/index.php");
 
 $breadcrumbs = [
     ['name' => 'Home', 'url' => $site_url, 'position' => 1],
@@ -39,7 +39,7 @@ if (!empty($_GET)) {
 
 <head>
     <?php include '../partials/head.php' ?>
-    <?php foreach (['faq.js', 'help/script.js', 'help.js'] as $js): ?>
+    <?php foreach (['faq.js', 'learn-and-support/script.js', 'learn-and-support.js'] as $js): ?>
         <script type="module" src="js/<?= $js ?>?v=<?= $staticVersion ?>" defer></script>
     <?php endforeach; ?>
 </head>
@@ -118,7 +118,7 @@ if (!empty($_GET)) {
                 <?php if ($page_name && !$isArticlePage): ?>
                     <?php foreach ($allowed_pages as $p): ?>
                         <?php
-                        $content = load_page_content(__DIR__ . "/../content/pages/help/$p/index.php");
+                        $content = load_page_content(__DIR__ . "/../content/pages/learn-and-support/$p/index.php");
                         if ($content):
                             echo "<article id='" . htmlspecialchars($p) . "' class='feature-article fx-column gap-40'>$content</article>";
                         endif;

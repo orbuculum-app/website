@@ -63,7 +63,7 @@ $title = $help_intro['title'];
 $description = $help_intro['description'];
 $links = $help_intro['links'];
 
-include '../content/pages/help/shared/_help_intro.php';
+include '../content/pages/learn-and-support/shared/intro.php';
 ?>
 
 
@@ -72,7 +72,7 @@ include '../content/pages/help/shared/_help_intro.php';
         <h2 class="h2"><?= htmlspecialchars($section['title']) ?></h2>
         <?php
             $howto_list = $section['howtos'];
-            include __DIR__ . '../../../help/how-to/howto_list.php';
+            include __DIR__ . '../../../learn-and-support/how-to/list.php';
         ?>
     </section>
 <?php endforeach; ?>

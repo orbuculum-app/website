@@ -11,7 +11,7 @@ if (isset($_GET['article']) && !empty($_GET['article'])) {
         echo $page_content;
     }
 } else {
-    $file_path = __DIR__ . '/all-how-tos.php';
+    $file_path = __DIR__ . '/all-page.php';
     include($file_path);
 }
 ?>
@@ -22,5 +22,5 @@ $links = [
         ['label' => 'See Real Use Cases', 'url' => ''],
         ['label' => 'Watch How To`s', 'url' => ''],
 ];
-include '../content/pages/help/shared/_help_footer.php';
+include '../content/pages/learn-and-support/shared/footer.php';
 ?>

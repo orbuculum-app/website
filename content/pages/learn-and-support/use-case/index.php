@@ -21,5 +21,5 @@ $links = [
         ['label' => 'See Real Use Cases', 'url' => ''],
         ['label' => 'Watch How To`s', 'url' => ''],
 ];
-include '../content/pages/help/shared/_help_footer.php';
+include '../content/pages/learn-and-support/shared/footer.php';
 ?>

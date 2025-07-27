@@ -7,7 +7,7 @@
         <?php
         $title = $faq['title'];
         $text = $faq['text'];
-        include __DIR__ . '/faq_item.php';
+        include __DIR__ . '/item.php';
         ?>
     <?php endforeach; ?>
 </div>

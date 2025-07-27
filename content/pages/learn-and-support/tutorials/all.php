@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/tutorial_tag.php';
+require_once __DIR__ . '/tag.php';
 
 $tutorials = [
     [
@@ -68,7 +68,7 @@ $title = $help_intro['title'];
 $description = $help_intro['description'];
 $links = $help_intro['links'];
 
-include __DIR__ . '/../shared/_help_intro.php';
+include __DIR__ . '/../shared/intro.php';
 ?>
 
 <section class="spaced-content">
@@ -91,7 +91,7 @@ include __DIR__ . '/../shared/_help_intro.php';
             $duration = $tutorial['duration'];
             $image = $tutorial['image'];
             $tag = $tutorial['tag'];
-            include __DIR__ . '/tutorial_item.php';
+            include __DIR__ . '/item.php';
             ?>
         <?php endforeach; ?>
     </div>
