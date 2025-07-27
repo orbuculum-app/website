@@ -21,11 +21,11 @@
         ],
     ];
 
-    include __DIR__ . '../../../help/faq/faq_list.php';
+    include __DIR__ . '../../../learn-and-support/faq/list.php';
     ?>
     <?php
     $href = '/faqs';
     $text = 'See all FAQs';
-    include __DIR__ . '../../../help/shared/more_link.php';
+    include __DIR__ . '../../../learn-and-support/shared/more_link.php';
     ?>
 </section>

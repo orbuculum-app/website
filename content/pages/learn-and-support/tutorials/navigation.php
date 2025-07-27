@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/tutorial_tag.php';
+require_once __DIR__ . '/tag.php';
 ?>
 
 <nav class="tutorials-nav card">

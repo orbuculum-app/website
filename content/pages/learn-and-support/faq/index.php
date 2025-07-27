@@ -6,7 +6,7 @@ $links = [
 ];
 $title = 'All FAQ\'s';
 $description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam a repudiandae perspiciatis sed iste ut nulla ipsum, veritatis facere tempore quos magnam deserunt error dignissimos magni veniam consectetur voluptate. Odio.';
-include '../content/pages/help/shared/_help_intro.php';
+include '../content/pages/learn-and-support/shared/intro.php';
 ?>
 
 <section class="faq-list big-card spaced-content">
@@ -82,7 +82,7 @@ include '../content/pages/help/shared/_help_intro.php';
         ],
     ];
 
-    include __DIR__ . '../../../help/faq/faq_list.php';
+    include __DIR__ . '../../../learn-and-support/faq/list.php';
     ?>
 </section>
 
@@ -92,5 +92,5 @@ $links = [
     ['label' => 'See Real Use Cases', 'url' => ''],
     ['label' => 'Watch How To`s', 'url' => ''],
 ];
-include __DIR__ . '/../shared/_help_footer.php';
+include __DIR__ . '/../shared/footer.php';
 ?>

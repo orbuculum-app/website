@@ -118,6 +118,6 @@ $howto_list = [
 <section class="spaced-content">
     <h2 class="h2">Related How To</h2>
     <?php
-    include __DIR__ . '/../../how-to/howto_list.php';
+    include __DIR__ . '/../../how-to/list.php';
     ?>
 </section>

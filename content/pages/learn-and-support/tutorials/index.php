@@ -11,7 +11,7 @@ if (isset($_GET['article']) && !empty($_GET['article'])) {
         echo $page_content;
     }
 } else {
-    $file_path = __DIR__ . '/all-tutorials.php';
+    $file_path = __DIR__ . '/all.php';
     include($file_path);
 }
 ?>
@@ -42,7 +42,7 @@ if (isset($_GET['article']) && !empty($_GET['article'])) {
         ],
     ];
 
-    include __DIR__ . '/../../help/faq/faq_list.php';
+    include __DIR__ . '/../../learn-and-support/faq/list.php';
     ?>
     <?php
     $href = '/faqs';
@@ -62,7 +62,7 @@ $howto_list = [
 <section class="spaced-content">
     <h2 class="h2">Related How To</h2>
     <?php
-    include __DIR__ . '/../how-to/howto_list.php';
+    include __DIR__ . '/../how-to/list.php';
     ?>
 </section>
 <?php
@@ -72,5 +72,5 @@ $links = [
         ['label' => 'See Real Use Cases', 'url' => ''],
         ['label' => 'Watch How To`s', 'url' => ''],
 ];
-include __DIR__ . '/../shared/_help_footer.php';
+include __DIR__ . '/../shared/footer.php';
 ?>

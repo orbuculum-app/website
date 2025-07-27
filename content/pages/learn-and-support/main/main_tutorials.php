@@ -37,7 +37,7 @@
             $description = $tutorial['description'];
             $duration = $tutorial['duration'];
             $image = $tutorial['image'];
-            include __DIR__ . '/../tutorials/tutorial_item.php';
+            include __DIR__ . '/../tutorials/item.php';
 
             ?>
         <?php endforeach; ?>
