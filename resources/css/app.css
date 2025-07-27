@@ -601,5 +601,5 @@ button {
   background-image: url('data:image/svg+xml;utf8,<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="7.7998" cy="7.36106" rx="7.5" ry="7.28049" fill="%232AA7EE"/><path d="M6.0998 10.8805L3.2998 8.07201L4.2798 7.08903L6.0998 8.91456L10.7198 4.28052L11.6998 5.2635L6.0998 10.8805Z" fill="white"/></svg>');
   background-repeat: no-repeat;
   background-size: contain;
-  transform: translateY(1px); /* Correct vertical alignment */
+  transform: translateY(1px);
 }
