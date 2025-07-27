@@ -17,7 +17,7 @@ $workflowList = [
 ];
 
 // ---------- HELPERS ----------
-function render_tutorial_step1($text, $index, $listItems, $imgs = [], $indexes_enabled = false, $prefixes = [])
+function render_tutorial_step($text, $index, $listItems, $imgs = [], $indexes_enabled = false, $prefixes = [])
 {
     echo "<div>";
     include __DIR__ . "/../../shared/article/article_step_title.php";
@@ -56,7 +56,7 @@ ob_start();
 </ul>
 
 <section class="spaced-content" id="step-1">
-    <?php render_tutorial_step1("Enter basic details", 1, $workflowList); ?>
+    <?php render_tutorial_step("Enter basic details", 1, $workflowList); ?>
 
     <iframe id="ytplayer" type="text/html" width="100%" height="490px"
             src="https://www.youtube.com/embed/M7lc1UVf-VE?color=white"
@@ -65,7 +65,7 @@ ob_start();
 
 <section class="spaced-content" id="step-2">
     <?php
-    render_tutorial_step1("Go to Workflows", 2, $workflowList, [
+    render_tutorial_step("Go to Workflows", 2, $workflowList, [
         'https://placehold.co/600x400',
         'https://placehold.co/900x900'
     ]);
@@ -74,7 +74,7 @@ ob_start();
 
 <section class="spaced-content" id="step-3">
     <?php
-    render_tutorial_step1("Add first details", 3, $workflowList, [
+    render_tutorial_step("Add first details", 3, $workflowList, [
         'https://placehold.co/600x400'
     ]);
     ?>
@@ -89,7 +89,7 @@ ob_start();
          and achieving financial success. Let's dive into the world of numbers and discover how they tell the story of your business!"
     ]);
 
-    render_tutorial_step1("Learn about accounting", 4, $step4Text, [
+    render_tutorial_step("Learn about accounting", 4, $step4Text, [
         'https://placehold.co/600x400',
         'https://placehold.co/600x400',
         'https://placehold.co/600x400',
@@ -102,7 +102,7 @@ ob_start();
 
 <section class="spaced-content" id="step-5">
     <?php
-    render_tutorial_step1("Try it yourself", 5, $workflowList, [
+    render_tutorial_step("Try it yourself", 5, $workflowList, [
         'https://placehold.co/600x400',
         'https://placehold.co/600x400',
         'https://placehold.co/600x400'
