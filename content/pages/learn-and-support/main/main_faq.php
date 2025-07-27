@@ -12,11 +12,19 @@
             'text' => 'Go to your account page, click "Settings", and update your details.',
         ],
         [
-            'title' => 'Can I invite team members?',
+            'title' => 'Can I give access to specific projects only??',
             'text' => 'Yes, head to "Team Management" and use the "Invite Member" button.',
         ],
         [
-            'title' => 'How to export my reports?',
+            'title' => 'What file formats can I import transactions from?',
+            'text' => 'Go to the Reports section, select a range, and click "Export to PDF/CSV".',
+        ],
+        [
+            'title' => 'How is user access managed in Orbuculum?',
+            'text' => 'Go to the Reports section, select a range, and click "Export to PDF/CSV".',
+        ],
+        [
+            'title' => 'Where can I find my invoices or billing information?',
             'text' => 'Go to the Reports section, select a range, and click "Export to PDF/CSV".',
         ],
     ];
