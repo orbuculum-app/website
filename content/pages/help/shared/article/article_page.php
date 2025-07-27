@@ -3,6 +3,7 @@
  * Required variables:
  * - array $steps
  * - string $content (HTML) – the actual article content
+ * - string $title
  */
 ?>
 <?php
@@ -87,5 +88,7 @@ $noStepsClass = empty($steps) ? 'article-page--no-steps' : '';
         window.addEventListener("scroll", updateActiveLinks);
         window.addEventListener("resize", updateActiveLinks);
         updateActiveLinks();
+
+        document.querySelector(".feature-header__article-title").innerHTML = " /  <?= $title ?>";
     });
 </script>

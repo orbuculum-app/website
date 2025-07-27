@@ -2,7 +2,6 @@
 // ---------- CONFIGURATION DATA ----------
 $steps = [];
 $title      = "Test how-to";
-$breadcrumb = "Learn & Support / Use Case";
 
 $workflowList = [
     'From the top menu, click on Workflows.',
@@ -33,8 +32,7 @@ function render_tutorial_step2($text, $index, $listItems, $imgs = [], $indexes_e
 ob_start();
 ?>
 
-<nav class="article-page__breadcrumb" id="step-0"><?= $breadcrumb ?></nav>
-<h1 class="h1"><?= htmlspecialchars($title) ?></h1>
+<h1 class="h1" id="step-0"><?= htmlspecialchars($title) ?></h1>
 
 <p>
    No sidebar here.

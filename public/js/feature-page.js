@@ -139,15 +139,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const handleNavigation = async (e) => {
-		e.preventDefault();
-
 		const targetElement = e.target.closest('[data-page]');
-		if (!targetElement) return;
-
-		const targetPage = targetElement.dataset.page;
+				const targetPage = targetElement.dataset.page;
 		if (!targetPage || !allowedPages.includes(targetPage) || targetElement.classList.contains('disabled')) return;
 
 		const existingArticle = document.getElementById(targetPage);
+		console.log(existingArticle)
+		if (existingArticle) {
+			e.preventDefault();
+		}
+		else {
+			return;
+		}
 
 		if (existingArticle) {
 			animatedScrollTo(existingArticle);

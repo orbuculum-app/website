@@ -10,7 +10,6 @@ $steps = [
 ];
 
 $title      = "Build Your Financial Foundation: Core Accounting Engine";
-$breadcrumb = "Learn & Support / Use Case";
 
 $workflowList = [
     'From the top menu, click on Workflows.',
@@ -41,8 +40,7 @@ function render_tutorial_step1($text, $index, $listItems, $imgs = [], $indexes_e
 ob_start();
 ?>
 
-<nav class="article-page__breadcrumb" id="step-0"><?= $breadcrumb ?></nav>
-<h1 class="h1"><?= htmlspecialchars($title) ?></h1>
+<h1 class="h1" id="step-0"><?= htmlspecialchars($title) ?></h1>
 
 <p>
     Creating a workflow in Orbuculum helps you organize users, projects, categories, and accounts
