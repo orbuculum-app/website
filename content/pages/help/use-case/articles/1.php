@@ -43,7 +43,6 @@ $companyInfo = [
 ];
 
 $title      = "How GreenWorks Logistics Saves Time and Gains Financial Clarity with Orbuculum";
-$breadcrumb = "Learn & Support / Use Case";
 
 $workflowList = [
     'From the top menu, click on Workflows.',
@@ -73,8 +72,7 @@ function render_tutorial_step3($text, $index, $listItems, $imgs = [], $indexes_e
 ob_start();
 ?>
 
-<nav class="article-page__breadcrumb" id="step-0"><?= $breadcrumb ?></nav>
-<h1 class="h1"><?= htmlspecialchars($title) ?></h1>
+<h1 class="h1" id="step-0"><?= htmlspecialchars($title) ?></h1>
 
 <ul class="use-case__author-info block-list">
     <?php foreach ($companyInfo as $label => $value): ?>
