@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadScript('js/header/modals/_login_modal.js?v=<?php echo $staticVersion; ?>')
             ]).then(() => {
                 // Show modal after scripts are loaded
-                $('#myModal').css('display', 'flex');
+                document.getElementById('myModal').style.display = 'flex';
             }).catch(error => {
                 console.error('Error loading modal scripts:', error);
             });
