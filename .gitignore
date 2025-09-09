@@ -61,3 +61,4 @@ package.json
 package-lock.json
 gulpfile.js
 src
+vendor

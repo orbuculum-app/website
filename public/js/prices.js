@@ -330,19 +330,18 @@ function hideTooltip() {
 }
 
 // FAQ accordion functionality
-function setupFaqAccordion() {
-    if (!DOM.faqQuestions || DOM.faqQuestions.length === 0) return;
-    
-    DOM.faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
+function setupFaqAccordion(root = document) {
+    const questions = root.querySelectorAll('.faq-question');
+
+    questions.forEach(question => {
+        // Prevent duplicate bindings
+        if (question.dataset.bound === 'true') return;
+        question.dataset.bound = 'true';
+
+        question.addEventListener('click', function () {
             const faqItem = this.closest('.faq-item');
-            const isActive = faqItem.classList.contains('active');
-            
-            // Toggle current FAQ item without closing others
-            if (isActive) {
-                faqItem.classList.remove('active');
-            } else {
-                faqItem.classList.add('active');
+            if (faqItem) {
+                faqItem.classList.toggle('active');
             }
         });
     });
