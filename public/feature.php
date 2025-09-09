@@ -137,7 +137,8 @@ $breadcrumbs = [
 
         <script>
             window.allowedPages = <?php echo json_encode($allowed_pages); ?>;
-            window.currentPage = '<?php echo $current_page; ?>';
+            window.currentPage = 'feature';
+            window.currentSubPage = '<?php echo $current_page; ?>';
         </script>
         <script src="js/feature-page.js?v=<?php echo $staticVersion; ?>" defer></script>
     </footer>

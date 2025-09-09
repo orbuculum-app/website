@@ -15,13 +15,13 @@ $learnAndSupports = require dirname(__DIR__, 3) . '/content/partials/submenus/le
             </div>
             <div class="submenu-ls__grid">
                 <?php foreach ($learnAndSupports['menu.items'] as $item): ?>
-                    <div class="submenu-ls__item fx-column">
+                    <a href="<?= $item['link'] ?>" class="submenu-ls__item fx-column">
                         <?= $item['icon'] ?>
                         <div class="submenu-ls__item-text fx-column">
                             <h3><?= $item['title']?></h3>
                             <p><?= $item['text']?></p>
                         </div>
-                    </div>
+                    </a>
                 <?php endforeach; ?>
             </div>
         </div>

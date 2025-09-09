@@ -1,0 +1,126 @@
+.tutorials-nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  row-gap: 8px;
+  column-gap: 25px;
+  list-style: none;
+  user-select: none;
+  white-space: nowrap;
+  flex-wrap: wrap;
+}
+
+.tutorials-nav__button {
+  cursor: pointer;
+  color: #8390b7;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.tutorials-nav__button.active,
+.tutorials-nav__button:hover {
+  color: #2aa7ee;
+  transition: color 0.2s;
+}
+
+.tutorial-article {
+  width: calc(33.333% - 20px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+  padding: 0;
+  color: black;
+}
+
+.tutorial-article:hover .tutorial-article__image img,
+.tutorial-article:hover .tutorial-article__button {
+  transform: scale(110%);
+}
+
+.tutorial-article .tutorial-article__image img,
+.tutorial-article__button {
+  transition: transform 0.2s;
+}
+
+.tutorial-article__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.tutorial-article__button {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+
+  background: #fcfcfc;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+.tutorial-article__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.tutorial-article__title {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.tutorial-article__description {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.tutorial-article__duration {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f6fa;
+  border-radius: 22px;
+  padding: 3px 10px;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.tutorial-article-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .tutorials-nav__list {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .tutorial-article {
+    width: calc(50% - 20px);
+  }
+}
+
+
+@media screen and (max-width: 530px) {
+  .tutorial-article {
+    width: 100%;
+  }
+}

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const contentContainer = document.querySelector('.js-feature-container');
 	const allowedPages = window.allowedPages || [];
-	let currentPage = window.currentPage || allowedPages[0] || '';
+	let currentSubPage = window.currentSubPage || allowedPages[0] || '';
 	let isLoading = false;
 
 	const animatedScrollTo = (element, options = {}) => {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const loadObserver = new IntersectionObserver((entries) => {
 		if (entries[0].isIntersecting && !isLoading && allowedPages.length) {
-			const currentIndex = allowedPages.indexOf(currentPage);
+			const currentIndex = allowedPages.indexOf(currentSubPage);
 			if (currentIndex < allowedPages.length - 1) {
 				loadPage(allowedPages[currentIndex + 1], false, false);
 			}
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (mostVisibleEntry && maxViewportRatio > 0.5) {
 			const pageName = mostVisibleEntry.target.id;
 			if (allowedPages.includes(pageName)) {
-				setCurrentPage(pageName);
+				setcurrentSubPage(pageName);
 			}
 		}
 	}, { rootMargin: '0px', threshold: Array.from({ length: 101 }, (_, i) => i / 100) });
@@ -128,26 +128,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		articles.forEach(article => visibilityObserver.observe(article));
 	};
 
-	const setCurrentPage = (pageName, updateHistory = true) => {
-		if (!pageName || currentPage === pageName) return;
-		currentPage = pageName;
+	const setcurrentSubPage = (pageName, updateHistory = true) => {
+		if (!pageName || currentSubPage === pageName) return;
+		currentSubPage = pageName;
 		if (updateHistory) {
-			history.pushState({ page: pageName }, '', `feature.php?page=${pageName}`);
+			history.pushState({ page: pageName }, '', `${window.currentPage}.php?page=${pageName}`);
 		}
 		updateNavigation(pageName);
 		updatePrevNextButtons();
 	};
 
 	const handleNavigation = async (e) => {
-		e.preventDefault();
-
 		const targetElement = e.target.closest('[data-page]');
-		if (!targetElement) return;
-
-		const targetPage = targetElement.dataset.page;
+				const targetPage = targetElement.dataset.page;
 		if (!targetPage || !allowedPages.includes(targetPage) || targetElement.classList.contains('disabled')) return;
 
 		const existingArticle = document.getElementById(targetPage);
+		console.log(existingArticle)
+		if (existingArticle) {
+			e.preventDefault();
+		}
+		else {
+			return;
+		}
 
 		if (existingArticle) {
 			animatedScrollTo(existingArticle);
@@ -155,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const allImagePromises = [];
 			let targetArticleElement = null;
 
-			const currentIndex = allowedPages.indexOf(currentPage);
+			const currentIndex = allowedPages.indexOf(currentSubPage);
 			const targetIndex = allowedPages.indexOf(targetPage);
 			if (targetIndex < currentIndex) {
 				for (let i = currentIndex - 1; i >= targetIndex; i--) {
@@ -184,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const updatePrevNextButtons = () => {
 		if (!allowedPages.length) return;
-		const currentIndex = allowedPages.indexOf(currentPage);
+		const currentIndex = allowedPages.indexOf(currentSubPage);
 		document.querySelectorAll('.js-feature-prev').forEach(button => {
 			button.classList.toggle('disabled', currentIndex === 0);
 			button.dataset.page = currentIndex > 0 ? allowedPages[currentIndex - 1] : '';
@@ -208,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (article) {
 				animatedScrollTo(article);
 			}
-			setCurrentPage(e.state.page, false);
+			setcurrentSubPage(e.state.page, false);
 		}
 	});
 
@@ -241,4 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	// don't scroll to first page
+	const target = document.getElementById(currentSubPage);
+	if (target != contentContainer.firstElementChild) {
+		animatedScrollTo(target);
+	}
 });
