@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+if (!defined('ROOT_PATH')) {
+    $root = __DIR__ . '/../';
+    define('ROOT_PATH', $root);
+}
+
 $features = include '../content/pages/features/features.php';
 ?>
 

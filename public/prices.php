@@ -4,6 +4,11 @@
 /* @var $headerContent array */
 /* @var $siteContent array */
 
+if (!defined('ROOT_PATH')) {
+    $root = __DIR__ . '/../';
+    define('ROOT_PATH', $root);
+}
+
 $prices = include '../content/pages/prices/prices.php';
 $fieldLabels = $prices['plans.field_labels'];
 
@@ -18,6 +23,7 @@ $rowTitleClass = 'row-title fx-row fx-center'
     <script type="module" src="js/prices.js?v=<?php echo $staticVersion; ?>" defer></script>
     <!-- Optimized script for handling only Growth plan height adjustments -->
     <script type="module" src="js/prices_resize.js?v=<?php echo $staticVersion; ?>" defer></script>
+    <script type="module" src="js/spa.js?v=<?php echo $staticVersion; ?>" defer></script>
 </head>
 
 

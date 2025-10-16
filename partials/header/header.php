@@ -1,7 +1,7 @@
 <?php
 $config = include __DIR__ . '/../../config/config.php';
 $headerContent = include __DIR__ . '/../../content/partials/header.php';
-$siteContent = include __DIR__ . '/../../content/app.php';
+$siteContent = include ROOT_PATH . 'content/app.php';
 ?>
 
 <header>

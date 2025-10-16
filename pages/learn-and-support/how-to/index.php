@@ -1,17 +1,9 @@
 <?php
-if (isset($_GET['article']) && !empty($_GET['article'])) {
-    $article_id = basename($_GET['article']);
-    $file_path = __DIR__ . '/articles/' . $article_id . '.md';
-
-    $markdown = file_get_contents($file_path);
-} else {
-    $file_path = __DIR__ . '/all-cases.php';
-    include($file_path);
-}
+include(__DIR__ . '/all.php');
 ?>
 
-<section class="spaced-content">
-    <?php include __DIR__ . '/../shared/article/article_page.php'; ?>
+<section class="spaced-content" id="how-to">
+    <?php include __DIR__ . '/../shared/article/article.php'; ?>
 </section>
 
 <?php
@@ -26,7 +18,7 @@ $howto_list = [
 <section class="spaced-content">
     <h2 class="h2">Related How To</h2>
     <?php
-    include __DIR__ . '/../how-to/list.php';
+    include __DIR__ . '/../../how-to/list.php';
     ?>
 </section>
 

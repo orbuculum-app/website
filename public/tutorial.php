@@ -13,7 +13,7 @@
     <main class="features__container">
         <div class="content">
             <?php
-            $file_path = __DIR__ . '/../content/pages/learn-and-support/shared/article_page.php';
+            $file_path = __DIR__ . '/../content/pages/learn-and-support/shared/article.php';
             include($file_path);
             ?>
         </div>

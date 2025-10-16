@@ -1,6 +1,7 @@
 <?php
 // Include version.php to access the getSvgUrl function
 require_once __DIR__ . '/../resources/AssetManager.php';
+require_once __DIR__ . '/../resources/SvgHelper.php';
 
 return [
     'site.title' => 'orbuculum',

@@ -72,7 +72,7 @@ include '../content/pages/learn-and-support/shared/intro.php';
         <h2 class="h2"><?= htmlspecialchars($section['title']) ?></h2>
         <?php
             $howto_list = $section['howtos'];
-            include __DIR__ . '../../../learn-and-support/how-to/list.php';
+            include ROOT_PATH . 'partials/learn-and-support/how-to/list.php';
         ?>
     </section>
 <?php endforeach; ?>

@@ -1,38 +1,43 @@
 <?php
 $markdown = '';
 
-if (isset($_GET['article']) && !empty($_GET['article'])) {
-    $article_id = basename($_GET['article']);
-    $file_path = __DIR__ . '/articles/' . $article_id . '.md';
-    $markdown = file_get_contents($file_path);
+$router = new AltoRouter();
+$router->setBasePath('/learn-and-support/tutorials');
+
+$router->map('GET', '', function() {
+    include(ROOT_PATH . "pages/learn-and-support/tutorials/all.php");
+});
 
 
-    // if (file_exists($file_path)) {
-    //     $markdown = file_get_contents($file_path);
+$router->map('GET', '/[*:page]', function($page) use (&$markdown) {
+    $path = ROOT_PATH . "pages/learn-and-support/tutorials/articles/{$page}.md";
+    if (file_exists($path)) {
+        $markdown = file_get_contents($path);
+        include(ROOT_PATH . 'partials/article/article.php');
+    } else {
+        header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+        echo "Article not found";
+    }
+});
 
-    //     // Preprocess :::block-list ... ::: into <ul class="block-list">...</ul>
-    //     $markdown = preg_replace_callback('/:::block-list\s*(.*?)\s*:::/s', function ($matches) {
-    //         return "<ul class=\"block-list\">\n" . trim($matches[1]) . "\n</ul>";
-    //     }, $markdown);
 
-    //     $parser = new GithubMarkdown();
-    //     $content = $parser->parse($markdown);
+// Match and dispatch
+$match = $router->match();
 
-    // } else {
-    //     $content = "<p>Article not found.</p>";
-    // }
+if ($match && is_callable($match['target'])) {
+    call_user_func_array($match['target'], $match['params']);
 } else {
-    include(__DIR__ . '/all.php');
-    return; // Stop execution after including all.php
+    header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    echo "Page not found";
 }
 ?>
 
-<section class="spaced-content">
-    <?php include __DIR__ . '/../shared/article/article_page.php'; ?>
-</section>
+<!--<section class="spaced-content">-->
+<!--    --><?php //include ROOT_PATH . 'partials/article/article.php'; ?>
+<!--</section>-->
 
 <!-- FAQ section -->
-<section class="faq-list big-card spaced-content">
+<section class="faq-list big-card spaced-content" id="tutorials">
     <h2 class="h2">Related FAQ</h2>
     <?php
     $faq_list = [
@@ -63,7 +68,7 @@ $howto_list = [
 <section class="spaced-content">
     <h2 class="h2">Related How To</h2>
     <?php
-    include __DIR__ . '/../how-to/list.php';
+    include ROOT_PATH . 'pages/learn-and-support/how-to/list.php';
     ?>
 </section>
 

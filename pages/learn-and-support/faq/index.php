@@ -6,10 +6,10 @@ $links = [
 ];
 $title = 'All FAQ\'s';
 $description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam a repudiandae perspiciatis sed iste ut nulla ipsum, veritatis facere tempore quos magnam deserunt error dignissimos magni veniam consectetur voluptate. Odio.';
-include '../content/pages/learn-and-support/shared/intro.php';
+include ROOT_PATH . 'pages/learn-and-support/shared/intro.php';
 ?>
 
-<section class="faq-list big-card spaced-content">
+<section class="faq-list big-card spaced-content" id="faq">
     <input placeholder="Search FAQ's" class="faq-list__search" type="search" />
     <p class="section-description">Find quick answers to common questions about using Orbuculum.From account setup
         to

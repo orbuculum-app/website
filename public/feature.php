@@ -1,4 +1,8 @@
 <?php
+if (!defined('ROOT_PATH')) {
+    $root = __DIR__ . '/../';
+    define('ROOT_PATH', $root);
+}
 
 require_once __DIR__ . '/../partials/feature/feature-template.php';
 

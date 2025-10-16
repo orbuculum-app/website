@@ -65,7 +65,7 @@ $current_index = array_search($page_name, $allowed_pages);
         </a>
 
         <?php foreach ($allowed_pages as $p): ?>
-            <a href="learn-and-support.php?page=<?= $p ?>"
+            <a href="#<?= $p ?>"
                class="js-feature-nav feature-nav-item<?= $p === $page_name ? ' active' : '' ?>"
                data-page="<?= $p ?>">
                 <?= ucwords(str_replace('-', ' ', $p)) ?>

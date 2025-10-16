@@ -16,8 +16,8 @@ require_once __DIR__ . '/../resources/SvgHelper.php';
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aXp-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Critical CSS first with preload for better performance -->
-    <link rel="preload" href="build/<?= $cssFile ?>?v=<?php echo $staticVersion; ?>" as="style">
-    <link rel="stylesheet" href="build/<?= $cssFile ?>?v=<?php echo $staticVersion; ?>">
+    <link rel="preload" href="/build/<?= $cssFile ?>?v=<?php echo $staticVersion; ?>" as="style">
+    <link rel="stylesheet" href="/build/<?= $cssFile ?>?v=<?php echo $staticVersion; ?>">
     
     <!-- Favicon and app icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=<?php echo $staticVersion; ?>">

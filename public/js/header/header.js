@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 150));
 
     setupClickHandlers();
+    submenuClickHandler();
 
     setupLoginCheck();
 
@@ -284,3 +285,16 @@ function handleScroll(lastScrollTop) {
         }
     }
 }
+
+const hideSubMenu = () => {
+    document.querySelectorAll('.submenu').forEach(el => {
+        el.classList.remove('menu_show');
+    });
+};
+
+
+const submenuClickHandler = () => {
+    document.querySelectorAll('.menu__item').forEach(item => {
+        item.addEventListener('click', () => hideSubMenu());
+    });
+};

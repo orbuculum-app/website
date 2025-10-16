@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFaqAccordion();
 });
 
-// FAQ accordion functionality
 function setupFaqAccordion(root = document) {
   const questions = root.querySelectorAll(".faq-question");
 

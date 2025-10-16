@@ -69,8 +69,9 @@ The project uses an automated CSS compilation system with hash-based versioning:
 ### Project Structure
 
 - `/config` - Configuration files
-- `/content` - Website content
+- `/content` - Website raw content (not template or pages), example: md files
 - `/partials` - Reusable PHP components
+- `/pages` - Page-specific PHP components (not reusable)
 - `/public` - Publicly accessible files (JS, CSS, images)
 - `/resources` - Source files for assets
 - `/tools` - Development utilities

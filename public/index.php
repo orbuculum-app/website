@@ -1,130 +1,78 @@
+<?php
+if (!defined('ROOT_PATH')) {
+    $root = __DIR__ . '/../';
+    define('ROOT_PATH', $root);
+}
+
+require_once ROOT_PATH . '/vendor/autoload.php';
+
+$router = new AltoRouter();
+$article_id = -1;
+
+// Tutorials can have articles (/learn-and-support/tutorials/slug)
+$router->map('GET', '/learn-and-support/tutorials[*:rest]', function($rest) {
+    $_SERVER['REQUEST_URI'] = '/learn-and-support/tutorials' . $rest;
+    include(__DIR__ . '/../pages/learn-and-support/tutorials/index.php');
+});
+
+// Other sections (faq, use-case, how-to)
+$router->map('GET', '/learn-and-support/faq', function() {
+    $_SERVER['REQUEST_URI'] = '/learn-and-support/faq';
+    include(__DIR__ . '/../pages/learn-and-support/faq/index.php');
+});
+
+$router->map('GET', '/learn-and-support/use-case', function() {
+    $_SERVER['REQUEST_URI'] = '/learn-and-support/use-case';
+    include(__DIR__ . '/../pages/learn-and-support/use-case/index.php');
+});
+
+$router->map('GET', '/learn-and-support/how-to', function() {
+    $_SERVER['REQUEST_URI'] = '/learn-and-support/how-to';
+    include(__DIR__ . '/../pages/learn-and-support/how-to/index.php');
+});
+
+// Root Learn & Support → handled by learn-and-support/index.php
+$router->map('GET', '/learn-and-support', function() {
+    include(__DIR__ . '/../pages/learn-and-support/index.php');
+});
+
+// Homepage
+$router->map('GET', '/', function() {
+    include(__DIR__ . '/../pages/index.php');
+});
+
+// 404
+$router->map('GET', '/404', function() {
+    include(ROOT_PATH . 'pages/404.php');
+});
+
+// Match the route BEFORE sending HTML
+$match = $router->match();
+if (!$match) {
+    header("HTTP/1.0 404 Not Found");
+    $content = file_get_contents(ROOT_PATH . 'pages/404.php');
+} else {
+    ob_start();
+    call_user_func_array($match['target'], $match['params']);
+    $content = ob_get_clean();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php
-/* @var $headerContent array */
-/* @var $siteContent array */
-$home = require dirname(__DIR__) . '/content/pages/home/index.php';
-?>
 <head>
-<?php include '../partials/head.php' ?>
+    <?php include '../partials/head.php'; ?>
 </head>
-
 <body>
-<?php include '../partials/header/header.php' ?>
+<?php include '../partials/header/header.php'; ?>
 <main class="main_container">
-    <div class="main_container_content_wrap content fx-column">
-
-        <section class="main__section fx-column gap-25" id="main-1">
-            <div class="main__section--content fx-column gap-20">
-                <div class="main__section--title fx-row txt-dark-grey f-s-25 f-500 gap-15">
-                    <?= $siteContent['site.logo_dark_big'] ?>
-                    <span><?= $siteContent['site.title'] ?></span>
-                </div>
-                <p class="main__section--desc txt-gray f-500 f-s-11"><?= $home['main-1.subtitle'] ?></p>
-            </div>
-
-            <button class="txt-asphalt-gray btn cursor-pointer fx-row fx-center">Try now</button>
-        </section>
-
-        <section class="main__section fx-column gap-25" id="main-2">
-            <div class="main__section--content fx-column gap-10">
-                <p class="main__section--title txt-black f-s-15 f-700">Constructor</p>
-                <p class="main__section--desc txt-gray f-s-1 f-500">Contains accounts and transactions between them,
-                    which can be assembled like ‘building blocks’.</p>
-            </div>
-
-            <a href="#" class="txt-zima-blue f-600 f-s-09 cursor-pointer">Read more →</a>
-        </section>
-
-        <section class="main__superpowers fx-column gap-40" id="superpowers">
-            <div class="main__superpowers--title">
-                <h2 class="f-600 f-s-2 txt-alt-gray"><?= $home['superpowers.title'] ?></h2>
-            </div>
-            <div class="main__superpowers--content fx-row">
-                <?php foreach ($home['superpowers.items'] as $item): ?>
-                    <div class="main__superpowers-item fx-column gap-15">
-                        <?= $item['icon'] ?>
-                        <div class="main__superpowers-item_text gap-10 fx-column fx-center">
-                            <h3 class="f-800 f-s-11 txt-alt-gray"><?= $item['title'] ?></h3>
-                            <p class="f-600 f-s-1 txt-gray"><?= $item['text'] ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </section>
-
-        <section class="main__section fx-column gap-25" id="main-3">
-            <div class="main__section--content fx-column gap-10">
-                <p class="main__section--title txt-black f-s-15 f-700">Shows where the money is</p>
-                <p class="main__section--desc txt-gray f-s-1 f-500">Transaction history, P&L, Cash Flow,
-                    Balances.</p>
-            </div>
-
-            <a href="#" class="txt-zima-blue f-600 f-s-09 cursor-pointer">Read more →</a>
-        </section>
-
-        <section class="main__section fx-column gap-25" id="main-4">
-            <div class="main__section--content fx-column gap-10">
-                <p class="main__section--title txt-black f-s-15 f-700">SQL interface to client data</p>
-                <p class="main__section--desc txt-gray f-s-1 f-500">Which enables the creation of custom
-                    reports/dashboards
-                    using external tools.</p>
-            </div>
-
-            <a href="#" class="txt-zima-blue f-600 f-s-09 cursor-pointer">Read more →</a>
-        </section>
-
-    </div>
-    <div class="main__who-wrap fx-row">
-        <section class="main__who content txt-white fx-column gap-40">
-            <div class="main__who-title fx-column gap-10">
-                <h3 class="f-s-2 f-700"><?= $home['who.title'] ?></h3>
-                <p class="f-s-125 f-400"><?= $home['who.subtitle'] ?></p>
-            </div>
-            <div class="main__who-content fx-grid">
-                <?php foreach ($home['who.items'] as $item) : ?>
-                    <div class="main__who-content_item fx-column gap-25">
-                        <div class="main__who-content_item-img bg-image"
-                             style="background-image: url(<?= $item['img_path'] ?>)"></div>
-                        <div class="main__who-content_item-text gap-10 fx-column">
-                            <h4 class="f-700 f-s-1"><?= $item['title'] ?></h4>
-                            <p class="f-400 f-s-09"><?= $item['text'] ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <div class="main__who-register_btn fx-row fx-center">
-                <button id="_main__register_btn" class="txt-white f-s-09 f-600 cursor-pointer fx-row fx-center">Register</button>
-            </div>
-        </section>
-    </div>
-
-    <div class="main_container_content_second_wrap  content fx-column">
-
-        <section class="main__section fx-column gap-25" id="main-5">
-            <div class="main__section--content fx-column gap-10">
-                <p class="main__section--title txt-black f-s-15 f-700">Multi-currency support</p>
-                <p class="main__section--desc txt-gray f-s-1 f-500">even custom 😉</p>
-            </div>
-
-            <a href="#" class="txt-zima-blue f-600 f-s-09 cursor-pointer">Read more →</a>
-        </section>
-
-        <section class="main__section fx-column gap-25" id="main-6">
-            <div class="main__section--content fx-column gap-10">
-                <p class="main__section--title txt-black f-s-15 f-700">Flexible access control system</p>
-            </div>
-
-            <a href="#" class="txt-zima-blue f-600 f-s-09 cursor-pointer">Read more →</a>
-        </section>
-
+    <div class="content spaced-content">
+        <?php echo $content; ?>
     </div>
 </main>
-
 <footer>
-    <?php include '../partials/footer/footer.php' ?>
+    <?php include '../partials/footer/footer.php'; ?>
 </footer>
-
-<?php include '../partials/scripts.php' ?>
+<?php include '../partials/scripts.php'; ?>
+<script src="/js/feature-page.js?v=<?php echo $staticVersion; ?>" defer></script>
 </body>
 </html>

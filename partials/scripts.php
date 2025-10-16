@@ -3,7 +3,7 @@ require_once __DIR__ . '/../resources/AssetManager.php';
 ?>
 
 <!-- Add script loading priority hints -->
-<script type="module" src="js/header/header.js?v=<?php echo $staticVersion; ?>" defer fetchpriority="low"></script>
+<script type="module" src="/js/header/header.js?v=<?php echo $staticVersion; ?>" defer fetchpriority="low"></script>
 <!-- Modal scripts loaded dynamically to improve initial page load -->
 <script>
 // Dynamically load modal scripts when needed
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<script type="module" src="js/app.js?v=<?php echo $staticVersion; ?>" defer></script>
+<script type="module" src="/js/app.js?v=<?php echo $staticVersion; ?>" defer></script>
 
 <!-- Add performance monitoring script -->
 <script>
@@ -88,3 +88,5 @@ if (window.performance && window.performance.timing) {
     });
 }
 </script>
+<script type="module" src="/js/spa.js?v=<?php echo $staticVersion; ?>" defer></script>
+<script src="/js/articleSidebar.js"></script>
