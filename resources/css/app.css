@@ -433,6 +433,7 @@ button {
   background-color: #fcfcfc;
   border-radius: 14px;
   padding: 30px;
+    box-shadow: 0px 4px 37px 0px #0C185814;
 }
 
 .big-card {

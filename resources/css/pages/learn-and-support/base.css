@@ -1,5 +1,8 @@
 .help-intro {
   background: linear-gradient(to right, #3aaefc, #1b91ec);
+    background-image: url('/images/learn-and-support/header.png');
+    background-position: center center;
+    background-size: cover;
   color: #fff;
 }
 
@@ -19,6 +22,7 @@
   font-size: 15px;
   line-height: 1.6;
   font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .help-intro__links-label {
@@ -28,8 +32,6 @@
 }
 
 .help-intro__links {
-  background: #1c8dcd;
-  padding: 25px;
   border-radius: 20px;
 }
 
@@ -56,7 +58,10 @@
 
 .help-footer {
   background-color: #44506a;
-  color: white;
+    background-image: url('/images/learn-and-support/footer.png');
+    background-position: center center;
+    background-size: cover;
+    color: white;
   flex-wrap: wrap;
 }
 
@@ -174,6 +179,7 @@
   min-height: unset;
   flex-wrap: wrap;
   color: white;
+    border-radius: 14px;
 }
 
 .try-yourself .section-description {

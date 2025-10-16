@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/tag.php';
-
 $tutorials = [
     [
         'title' => 'Getting started with Orbuculum: your first 30 minutes',
@@ -53,46 +51,29 @@ $tutorials = [
     ],
 ];
 
-// Intro data
-$help_intro = [
-    'title' => 'Tutorials',
-    'description' => 'Explore hands-on tutorials that guide you through real use cases in Orbuculum — from day-to-day tasks like tracking transactions  to advanced workflows, team collaboration, and financial analysis.',
-    'links' => [
-        ['label' => 'Find an answer', 'url' => ''],
-        ['label' => 'Get started fast', 'url' => ''],
-        ['label' => 'See real examples', 'url' => ''],
-    ]
+$title = 'Tutorials';
+$description = 'Explore hands-on tutorials that guide you through real use cases in Orbuculum — from day-to-day tasks like tracking transactions  to advanced workflows, team collaboration, and financial analysis.';
+$links = [
+    ['label' => 'Find an answer', 'url' => ''],
+    ['label' => 'Get started fast', 'url' => ''],
+    ['label' => 'See real examples', 'url' => ''],
 ];
 
-$title = $help_intro['title'];
-$description = $help_intro['description'];
-$links = $help_intro['links'];
-
-include __DIR__ . '/../shared/intro.php';
-?>
-
-<section class="spaced-content">
-    <div>
-        <h2 class="h2">Featured Tutorials</h2>
-        <p class="section-description">
-            Find quick answers to common questions about using Orbuculum. From account setup to report export — here are
-            the things users ask most often.
-        </p>
-    </div>
-
-    <?php
-    include "navigation.php"
-        ?>
-    <div class="tutorial-article-list">
-        <?php foreach ($tutorials as $tutorial): ?>
-            <?php
-            $title = $tutorial['title'];
-            $description = $tutorial['description'];
-            $duration = $tutorial['duration'];
-            $image = $tutorial['image'];
-            $tag = $tutorial['tag'];
-            include __DIR__ . '/item.php';
-            ?>
-        <?php endforeach; ?>
-    </div>
-</section>
+$faq_list = [
+    ['title' => 'How do I change my account settings?', 'text' => 'Go to your account page, click "Settings", and update your details.'],
+    ['title' => 'Can I give access to specific projects only??', 'text' => 'Yes, head to "Team Management" and use the "Invite Member" button.'],
+    ['title' => 'What file formats can I import transactions from?', 'text' => 'Go to the Reports section, select a range, and click "Export to PDF/CSV".'],
+    ['title' => 'How is user access managed in Orbuculum?', 'text' => 'Go to the Reports section, select a range, and click "Export to PDF/CSV".'],
+    ['title' => 'Where can I find my invoices or billing information?', 'text' => 'Go to the Reports section, select a range, and click "Export to PDF/CSV".'],
+];
+$howto_list = [
+    ['text' => 'How to create a new workflow', 'steps' => 4, 'href' => ''],
+    ['text' => 'How to invite a new user', 'steps' => 4, 'href' => ''],
+    ['text' => 'How to invite a new user', 'steps' => 4, 'href' => ''],
+    ['text' => 'How to invite a new user', 'steps' => 4, 'href' => ''],
+];
+$footer_links = [
+    ['label' => 'Visit FAQ', 'url' => ''],
+    ['label' => 'See Real Use Cases', 'url' => ''],
+    ['label' => 'Watch How To`s', 'url' => ''],
+];

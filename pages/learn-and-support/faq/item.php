@@ -3,10 +3,10 @@
 /** @var string $text */
 ?>
 
-<div class="faq-item">
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <div class="faq-header">
         <div class="faq-question">
-            <h3 class="f-600 f-s-16 txt-black"><?= $title ?></h3>
+            <h3 class="f-600 f-s-16 txt-black" itemprop="name"><?= htmlspecialchars($title) ?></h3>
             <span class="faq-toggle">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                      xmlns="http://www.w3.org/2000/svg" class="faq-icon faq-plus">
@@ -23,9 +23,9 @@
             </span>
         </div>
     </div>
-    <div class="faq-content">
-        <div class="faq-answer txt-alt-gray f-s-14 f-500">
-            <?= $text ?>
+    <div class="faq-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div class="faq-answer txt-alt-gray f-s-14 f-500" itemprop="text">
+            <?= nl2br(htmlspecialchars($text)) ?>
         </div>
     </div>
 </div>

@@ -1,29 +1,25 @@
 <?php
-$file_path = __DIR__ . '/all-cases.php';
-include($file_path);
-
-?>
-<?php
-$howto_list = [
-    ['text' => 'How to create a new workflow', 'steps' => 4, 'href' => ''],
-    ['text' => 'How to invite a new user', 'steps' => 4, 'href' => ''],
-    ['text' => 'How to invite a new user', 'steps' => 4, 'href' => ''],
-    ['text' => 'How to invite a new user', 'steps' => 4, 'href' => ''],
-];
+include ROOT_PATH . 'content/pages/learn-and-support/use-case.php';
+include ROOT_PATH . 'pages/learn-and-support/shared/intro.php';
 ?>
 
-<section class="spaced-content">
-    <h2 class="h2">Related How To</h2>
+<section class="use-cases spaced-content">
     <?php
-    include ROOT_PATH . 'pages/how-to/list.php';
+    foreach ($quotes as $quote) {
+        $text = $quote['text'];
+        $title = $quote['title'];
+        $author = $quote['author'];
+        $img = $quote['img'];
+        include ROOT_PATH . 'pages/learn-and-support/use-case/quote.php';
+    }
     ?>
 </section>
 
+<section class="spaced-content">
+    <h2 class="h2">Related How To</h2>
+    <?php include ROOT_PATH . 'pages/learn-and-support/how-to/list.php'; ?>
+</section>
+
 <?php
-$links = [
-        ['label' => 'Visit FAQ', 'url' => ''],
-        ['label' => 'See Real Use Cases', 'url' => ''],
-        ['label' => 'Watch How To`s', 'url' => ''],
-];
 include ROOT_PATH . 'pages/learn-and-support/shared/footer.php';
 ?>

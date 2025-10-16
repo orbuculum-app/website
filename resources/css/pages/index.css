@@ -11,20 +11,21 @@
     padding: calc(var(--header-desktop-height)) 0 0 0;
 }
 
-.content {
-    opacity: 0;
-    animation: fadeInUp 0.5s ease-out;
-    opacity: 1;
-}
+/* TODO: return back with spa */
+/*.content {*/
+/*    opacity: 0;*/
+/*    animation: fadeInUp 0.5s ease-out;*/
+/*    opacity: 1;*/
+/*}*/
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+/*@keyframes fadeInUp {*/
+/*    from {*/
+/*        opacity: 0;*/
+/*    }*/
+/*    to {*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/
 
 
 #main-1 {

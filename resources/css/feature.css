@@ -29,7 +29,7 @@
   min-height: 3.75rem;
   align-items: center;
   margin-bottom: 1.875rem;
-  margin-top: 1.875rem;
+  /*margin-top: 1.875rem;*/
   row-gap: 0.625rem;
   justify-content: center;
   z-index: 5;
@@ -48,7 +48,13 @@
 }
 .feature-nav-item {
   color: inherit;
+    transition: color .2s;
 }
+
+.feature-nav-item:hover {
+    color: #4E5B76;
+}
+
 .feature-nav a {
   color: inherit;
 }

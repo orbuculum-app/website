@@ -7,7 +7,6 @@ enum TutorialTag: string {
     case Integrations = 'integrations';
     case Automation = 'automation';
 
-    // Optional: For displaying human-readable labels
     public function label(): string {
         return match($this) {
             self::GettingStarted => 'Getting Started',

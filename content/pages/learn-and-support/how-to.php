@@ -48,31 +48,16 @@ $howto_sections = [
     ],
 ];
 
-// Intro content
-$help_intro = [
-    'title' => 'Practical Step-by-Step Guides',
-    'description' => 'Learn how to use Orbuculum through practical, step-by-step instructions that walk you through key features, from setting up your workflow to importing data, managing users, generating reports, and more.',
-    'links' => [
-        ['label' => 'Find an answer', 'url' => '#answer'],
-        ['label' => 'Read a tutorial', 'url' => '#tutorial'],
-        ['label' => 'See real examples', 'url' => '#examples'],
-    ]
+$title = 'Practical Step-by-Step Guides';
+$description = 'Learn how to use Orbuculum through practical, step-by-step instructions that walk you through key features, from setting up your workflow to importing data, managing users, generating reports, and more';
+$links = [
+    ['label' => 'Find an answer', 'url' => '#answer'],
+    ['label' => 'Read a tutorial', 'url' => '#tutorial'],
+    ['label' => 'See real examples', 'url' => '#examples'],
 ];
 
-$title = $help_intro['title'];
-$description = $help_intro['description'];
-$links = $help_intro['links'];
-
-include '../content/pages/learn-and-support/shared/intro.php';
-?>
-
-
-<?php foreach ($howto_sections as $section): ?>
-    <section class="help-main-todos spaced-content">
-        <h2 class="h2"><?= htmlspecialchars($section['title']) ?></h2>
-        <?php
-            $howto_list = $section['howtos'];
-            include ROOT_PATH . 'partials/learn-and-support/how-to/list.php';
-        ?>
-    </section>
-<?php endforeach; ?>
+$footer_links = [
+    ['label' => 'Visit FAQ', 'url' => ''],
+    ['label' => 'See Real Use Cases', 'url' => ''],
+    ['label' => 'Watch How To`s', 'url' => ''],
+];

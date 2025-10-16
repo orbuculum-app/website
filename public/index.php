@@ -7,7 +7,6 @@ if (!defined('ROOT_PATH')) {
 require_once ROOT_PATH . '/vendor/autoload.php';
 
 $router = new AltoRouter();
-$article_id = -1;
 
 // Tutorials can have articles (/learn-and-support/tutorials/slug)
 $router->map('GET', '/learn-and-support/tutorials[*:rest]', function($rest) {
@@ -15,25 +14,9 @@ $router->map('GET', '/learn-and-support/tutorials[*:rest]', function($rest) {
     include(__DIR__ . '/../pages/learn-and-support/tutorials/index.php');
 });
 
-// Other sections (faq, use-case, how-to)
-$router->map('GET', '/learn-and-support/faq', function() {
-    $_SERVER['REQUEST_URI'] = '/learn-and-support/faq';
-    include(__DIR__ . '/../pages/learn-and-support/faq/index.php');
-});
-
-$router->map('GET', '/learn-and-support/use-case', function() {
-    $_SERVER['REQUEST_URI'] = '/learn-and-support/use-case';
-    include(__DIR__ . '/../pages/learn-and-support/use-case/index.php');
-});
-
-$router->map('GET', '/learn-and-support/how-to', function() {
-    $_SERVER['REQUEST_URI'] = '/learn-and-support/how-to';
-    include(__DIR__ . '/../pages/learn-and-support/how-to/index.php');
-});
-
-// Root Learn & Support → handled by learn-and-support/index.php
+// Root Learn & Support → handled by learn-and-support/index(NOT_IN_USE).php
 $router->map('GET', '/learn-and-support', function() {
-    include(__DIR__ . '/../pages/learn-and-support/index.php');
+    include(__DIR__ . '/../pages/learn-and-support/index(NOT_IN_USE).php');
 });
 
 // Homepage
