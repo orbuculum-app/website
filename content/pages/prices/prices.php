@@ -249,8 +249,8 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with pay-as-you-grow expans
 With any plan, you can easily upgrade its capabilities as your business grows:</p>
   <ul class="fx-column gap-7" style="list-style: none;"> 
     <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; line-height: 11px;">•</span><div><b>Additional Accounts / Projects:</b> $49 per 100 units.</div></li>
-    <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; line-height: 11px;">•</span><div><b>Additional Managed Integration:</b> $45 per unit.</div></li>
-    <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; line-height: 11px;">•</span><div><b>Integration or Custom Report Creation/Update:</b> $200 per unit. (Custom development based on API/SQL, available in any plan).</div></li>
+    <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; line-height: 11px;">•</span><div><b>Additional Managed Integration:</b> from $45 per unit (for standard integrations; complex integrations quoted individually).</div></li>
+    <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; line-height: 11px;">•</span><div><b>Integration or Custom Report Creation/Update:</b> from $200 per unit. Complex integrations and reports are quoted individually.</div></li>
   </ul>
   <p>Choose the plan that meets your current needs and expand it only when it\'s genuinely necessary and cost-effective.</p>',
     'server.image_path' => '/images/prices/server_img_3.png',
@@ -280,10 +280,11 @@ With any plan, you can easily upgrade its capabilities as your business grows:</
         ],
         [
             'question' => 'Creating/Updating Integrations or Custom Reports',
-            'answer' => '<p>Custom development by our team to create or modify integrations with external data sources (e.g., payment systems, banks, CRM) and/or custom reports (e.g., ROI of marketing channels, forecast of card top-up needs, cohort analysis).</p>
+            'answer' => '<p>Custom development by our team to create or modify integrations with external data sources (e.g., payment systems, banks, CRM) and/or custom reports & dashboards (e.g., ROI of marketing channels, forecast of card top-up needs, cohort analysis).</p>
             <ul class="fx-column gap-7" style="list-style: none;">
-                <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Scope of work:</b> One "unit" is typically one standard report or one integration. The scope for complex tasks and the grouping of minor adjustments are estimated and agreed upon with you individually.</div></li>
-                <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Terms:</b> The service limit is calculated quarterly and does not carry over to the next period. The cost of an additional unit beyond the plan is $200.</div></li>
+                <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Scope of work:</b> One "unit" is typically one standard report or one integration. Complex integrations and reports are scoped and quoted individually.</div></li>
+                <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Terms:</b> The service limit is calculated quarterly and does not carry over to the next period. Standard unit cost: from $200. Managed integration hosting: from $45/month.</div></li>
+                <li style="display: flex; flex-direction: row; align-items: flex-start;"><span style="margin-right: 5px; color: var(--color-list-blue); font-size: 50px; line-height: 11px;">•</span><div><b>Support:</b> Managed integrations include maintenance for minor API changes. Major breaking changes from third-party providers are quoted as additional work.</div></li>
             </ul>'
         ]
     ]
