@@ -111,7 +111,7 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with pay-as-you-grow expans
                 'value' => '',
                 'desc' => ''
             ],
-            'for_who' => 'Entrepreneurs and freelancers who need free basic financial accounting/bookkeeping'
+            'for_who' => 'Individual entrepreneurs testing the waters with basic financial tracking'
         ],
         [
             'class' => '_business',
@@ -152,7 +152,7 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with pay-as-you-grow expans
                 'value' => '',
                 'desc' => ''
             ],
-            'for_who' => 'Growing businesses needing advanced features and priority support'
+            'for_who' => 'Teams automating workflows with scripts and integrations'
         ],
         [
             'class' => '_growth',
@@ -240,7 +240,7 @@ $45 per unit.'><br><span class='tooltip-text roboto'>with pay-as-you-grow expans
                 'value' => 'Up to 6',
                 'desc' => ''
             ],
-            'for_who' => 'Larger enterprises handling high-volume financial data that require elite-level, personalized customization'
+            'for_who' => 'High-volume operations requiring white-glove support and deep customization'
         ],
     ],
     'extra_info.image_path' => '/images/prices/prices_extra_info_2.png',
