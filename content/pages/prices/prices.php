@@ -47,8 +47,8 @@ return [
         ],
         [
             'icon' => include __DIR__ . '/icons/prices_api_sql.php',
-            'title' => 'API & SQL Access',
-            'text' => 'Integrate seamlessly. Use API (read/write) & SQL (read-only) for custom reports & dashboards.',
+            'title' => 'API, SQL & MCP Access',
+            'text' => 'Integrate seamlessly. Use API (read/write), SQL (read-only) & MCP for AI agents. Build custom reports & automations.',
         ]
     ],
 
